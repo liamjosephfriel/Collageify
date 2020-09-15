@@ -1,0 +1,6 @@
+{
+    "require": {
+        "monolog/monolog": "1.0.*",
+        "jwilsson/spotify-web-api-php": "^2.6"
+    }
+}
