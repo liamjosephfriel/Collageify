@@ -1,2 +1,14 @@
 <?php
-// Bootstrapper
+/**
+ * Bootstrapper file for Collageify
+ */
+
+// Only load .env on dev environment
+if (!$_ENV['PROD_ENV']) {
+    $env_loader = Dotenv\Dotenv::createImmutable(__DIR__ . '../../');
+    $env_loader->load();
+}
+
+// Twig
+$loader = new Twig_Loader_Filesystem($_ENV['APP_PATH'] . '/templates');
+$twig = new Twig_Environment($loader);

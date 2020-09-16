@@ -1,6 +1,8 @@
 {
     "require": {
         "monolog/monolog": "1.0.*",
-        "jwilsson/spotify-web-api-php": "^2.6"
+        "jwilsson/spotify-web-api-php": "^2.6",
+        "twig/twig": "^2.12",
+        "vlucas/phpdotenv": "^4.1"
     }
 }
