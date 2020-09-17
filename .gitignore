@@ -1,3 +1,4 @@
 vendor/
 node_modules/
 app/lib/cache/*
+css/bootstrap/*

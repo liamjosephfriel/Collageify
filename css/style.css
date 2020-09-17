@@ -1,184 +1,19 @@
-.wrapper {
-	height: 100%;
-	width: 70%;
+.collageify-main {
+  background-color: #080808;
 }
-
-.square {
-    float:left;
-    position: relative;
-    width: 33%;
-    padding-bottom : 33%; /* = width for a 1:1 aspect ratio */
-    margin:0.1%;
-    background-color:#1E1E1E;
-    overflow:hidden;
+.collageify-navbar {
+  color: #FFFFFF;
+  background-color: #000000;
+  min-height: 75px;
 }
-
-.content {
-    position:absolute;
-    height:100%; /* = 100% - 2*5% padding */
-    width:100%; /* = 100% - 2*5% padding */
-    
+.collageify-footer {
+  color: #FFFFFF;
+  background-color: #000000;
+  min-height: 50px;
 }
-
-/*  For responsive images */
-
-.content .rs{
-    width:100%;
-    height:100%;
+.collageify-auth {
+  min-height: 80%;
 }
-/*  For responsive images as background */
-
-.bg{
-    background-position:center center;
-    background-repeat:no-repeat;
-    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
-    color:#fff;
-}
-
-/*  following just for the demo */
-
-
-body {
-    font-size:20px;
-    font-family: 'Lato',verdana, sans-serif;
-    color: #191414; /* SPOTIFY BLACK */
-    background: repeating-linear-gradient(    135deg,    #1DB954,    #1DB954 10px,    white 10px,    white 20px  );
-}
-
-.numbers{
-    font-weight:900;
-    font-size:100px;
-}
-
-#albumGrid {
-    overflow: overlay;
-    width: 90%;
-    margin: auto;
-}
-
-canvas {
+.collageify-auth .container {
   width: 100%;
-  margin: 0 !important;
-}
-
-.clearfix:after {
-   content: " "; /* Older browser do not support empty content */
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
-}
-
-.container {
-    width: 90%;
-    background: white;
-    border-radius: 25px;
-    margin: auto;
-}
-
-.header-logo {
-    height: 50px;
-    width: 50px;
-    display: inline;
-    margin-left: 10px;
-}
-
-h1 {
-    width: 60%;
-    display: inline;
-    margin: auto;
-
-}
-
-.titleContainer {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin: 30px 0px 30px 0px;
-}
-
-.blurbContainer {
-    font-size: 0.75em;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-.authenticationContainer {
-    font-size: 1em;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-}
-
-.authenticationContainer i {
-  margin-left: 5px;
-}
-
-#randomImage {
-  display: block;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
-.customButton {
-  background-color: #1DB954; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.filterBar {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.75em;
-    text-align: center;
-}
-
-#selectTimeSpan {
-   -webkit-border-radius: 5px;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
-   background: transparent;
-   border: dashed;
-   padding: 5px; /* If you add too much padding here, the options won't show in IE */
-   width: 268px;
-   border-width: 1px;
-}
-
-#filterButton {
-  background-color: black; /* Green */
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.footerContainer {
-    margin: 40px 0px 25px 0px;
-}
-
-.footerRule {
-    border-color: black;
-    border-width: 1px;
-}
-
-.footerText {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.75em;
-  margin-bottom: 5px;
-  color: black;
-}
-
-a {
-    color: #1DB954;
-    text-decoration: none;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-.downloadButtonContainer {
-  margin-bottom: 5%;
 }

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Collageify</title>
+
+        <link type="text/css" href="{{ get_env('APP_URL') }}/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" href="{{ get_env('APP_URL') }}/css/style.css" rel="stylesheet">
+    </head>
+    <body class="collageify-main">
+    {# Navbar Includes #}
+    {% include ('includes/navbar.twig') %}
+
+    {# Content Block #}
+    {% block content %}
+    {% endblock %}
+
+    {# Footbar Includes #}
+    {% include ('includes/footer.twig') %}
+    </body>
+</html>
