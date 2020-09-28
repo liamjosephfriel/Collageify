@@ -1,7 +1,17 @@
 <navbar class="collageify-navbar navbar">
     <div class="container">
         <a href="{{ get_env('APP_URL') }}" class="navbar-brand collageify-logo">
-            <span class="sr-only">Collageify</span>
+            Collageify for
+            <img src="{{ get_env('APP_URL') }}/assets/img/spotify-icon-white.png" alt="Spotify logo" />
         </a>
+
+        <div class="collageify-avatar-container">
+            <div class="user-avatar">
+                <img src="{{ get_env('APP_URL') }}/assets/img/liam-friel-icon.jpg" alt="User's avatar image" class="rounded-circle"/>
+            </div>
+            <div class="user-name navbar-text">
+                Liam Friel
+            </div>
+        </div>
     </div>
 </navbar>

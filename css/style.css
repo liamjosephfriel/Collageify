@@ -1,15 +1,37 @@
 .collageify-main {
-  background-color: #080808;
+  background-color: #0F0F0F;
 }
 .collageify-navbar {
   color: #FFFFFF;
   background-color: #000000;
   min-height: 75px;
+  font-size: 0.75rem;
+}
+.collageify-navbar a {
+  color: #FFFFFF;
+}
+.collageify-navbar img {
+  margin-left: 5px;
+  max-height: 45px;
+}
+.collageify-navbar .collageify-avatar-container .user-avatar {
+  float: left;
+  margin-right: 15px;
+}
+.collageify-navbar .collageify-avatar-container .user-name {
+  float: right;
 }
 .collageify-footer {
   color: #FFFFFF;
   background-color: #000000;
   min-height: 50px;
+}
+.collageify-footer .footer-text {
+  float: right;
+}
+.collageify-footer a {
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 .collageify-auth {
   min-height: 80%;

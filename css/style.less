@@ -1,7 +1,7 @@
 @collageify-header-footer-bg-colour: #000000;
 @collageify-header-footer-font-colour: #FFFFFF;
 
-@collageify-main-bg-colour: #080808;
+@collageify-main-bg-colour: #0F0F0F;
 
 .collageify-main {
     background-color: @collageify-main-bg-colour;
@@ -11,12 +11,42 @@
     color: @collageify-header-footer-font-colour;
     background-color: @collageify-header-footer-bg-colour;
     min-height: 75px;
+    font-size: 0.75rem;
+
+    a {
+        color: @collageify-header-footer-font-colour;
+    }
+
+    img {
+        margin-left: 5px;
+        max-height: 45px;
+    }
+
+    .collageify-avatar-container {
+        .user-avatar {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .user-name {
+            float: right;
+        }
+    }
 }
 
 .collageify-footer {
     color: @collageify-header-footer-font-colour;
     background-color: @collageify-header-footer-bg-colour;
     min-height: 50px;
+
+    .footer-text {
+        float: right;
+    }
+
+    a {
+        color: @collageify-header-footer-font-colour;
+        text-decoration: underline;
+    }
 }
 
 .collageify-auth {
