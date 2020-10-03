@@ -5,7 +5,7 @@
   color: #FFFFFF;
   background-color: #000000;
   min-height: 75px;
-  font-size: 0.75rem;
+  font-family: 'Montserrat', 'sans-serif';
 }
 .collageify-navbar a {
   color: #FFFFFF;
@@ -20,6 +20,7 @@
 }
 .collageify-navbar .collageify-avatar-container .user-name {
   float: right;
+  font-size: 1.1rem;
 }
 .collageify-footer {
   color: #FFFFFF;
@@ -34,8 +35,17 @@
   text-decoration: underline;
 }
 .collageify-auth {
-  min-height: 80%;
+  margin-top: 7.5%;
+  color: #FFFFFF;
 }
-.collageify-auth .container {
-  width: 100%;
+.collageify-auth .content-title {
+  font-size: 3rem;
+  font-family: 'Montserrat', 'sans-serif';
+}
+.collageify-auth .content-row {
+  margin-top: 7.5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 1rem;
+  margin-bottom: 7.5%;
 }

@@ -1,20 +1,20 @@
 @collageify-header-footer-bg-colour: #000000;
-@collageify-header-footer-font-colour: #FFFFFF;
-
+@collageify-main-font-colour: #FFFFFF;
 @collageify-main-bg-colour: #0F0F0F;
+@collageify-headers-font-family: 'Montserrat', 'sans-serif';
 
 .collageify-main {
     background-color: @collageify-main-bg-colour;
 }
 
 .collageify-navbar {
-    color: @collageify-header-footer-font-colour;
+    color: @collageify-main-font-colour;
     background-color: @collageify-header-footer-bg-colour;
     min-height: 75px;
-    font-size: 0.75rem;
+    font-family: @collageify-headers-font-family;
 
     a {
-        color: @collageify-header-footer-font-colour;
+        color: @collageify-main-font-colour;
     }
 
     img {
@@ -30,12 +30,13 @@
 
         .user-name {
             float: right;
+            font-size: 1.1rem;
         }
     }
 }
 
 .collageify-footer {
-    color: @collageify-header-footer-font-colour;
+    color: @collageify-main-font-colour;
     background-color: @collageify-header-footer-bg-colour;
     min-height: 50px;
 
@@ -44,15 +45,25 @@
     }
 
     a {
-        color: @collageify-header-footer-font-colour;
+        color: @collageify-main-font-colour;
         text-decoration: underline;
     }
 }
 
 .collageify-auth {
-    min-height: 80%;
-    
-    .container {
-        width: 100%;
+    margin-top: 7.5%;
+    color: @collageify-main-font-colour;
+
+    .content-title {
+        font-size: 3rem;
+        font-family: @collageify-headers-font-family; 
+    }
+
+    .content-row {
+        margin-top: 7.5%; 
+        padding-left: 15%;
+        padding-right: 15%;
+        font-size: 1rem;
+        margin-bottom: 7.5%;
     }
 }

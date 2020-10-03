@@ -1,7 +1,18 @@
 {% extends "layouts/default.twig" %}
 
 {% block content %}
-    <div class="collageify-auth">
-    test
+    <div class="collageify-auth container">
+        <div class="row d-flex justify-content-center">
+            <h1 class="content-title">Collageify</h1>
+        </div>
+        <div class="row content-row">
+            <p>For too long have we been missing an album collage generator that pulls from Spotify like Tapmusic's great last.fm collage generator.</p>
+            <p>Collageify solves this.<p>
+            <p>The algorithim works by pulling your most recently played songs and collating them by album, then ranking each of the albums you've been playing recently.<p>
+            <p>Generate yours by giving the tool permission to see your most viewed tracks below!</p>
+        </div>
+        <div class="row button-row justify-content-center">
+            <button type="button" class="btn btn-light btn-lg auth-button">Generate my collage!</button>
+        </div>
     </div>
 {% endblock %}
