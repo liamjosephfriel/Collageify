@@ -49,3 +49,29 @@
   font-size: 1rem;
   margin-bottom: 7.5%;
 }
+.collageify-dashboard {
+  margin-top: 7.5%;
+  color: #FFFFFF;
+}
+.collageify-dashboard .dashboard-title {
+  font-size: 2rem;
+  font-family: 'Montserrat', 'sans-serif';
+}
+.collageify-dashboard .share-title {
+  font-size: 1.5rem;
+  font-family: 'Montserrat', 'sans-serif';
+}
+.collageify-dashboard .content-row {
+  margin-top: 7.5%;
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 1rem;
+  margin-bottom: 7.5%;
+}
+.collageify-dashboard .dashboard-text-row {
+  margin-top: 5%;
+}
+.collageify-dashboard .button-row {
+  margin-top: 4%;
+  margin-bottom: 4%;
+}

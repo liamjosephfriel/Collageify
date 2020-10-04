@@ -1,0 +1,27 @@
+{% extends "layouts/default.twig" %}
+
+{% block content %}
+    <div class="collageify-dashboard container-fluid">
+        <div class="row content-row">
+            <div class="col-md collage-col">
+                {% include 'includes/collage.twig' %}
+            </div>
+            <div class="col-md dashboard-col">
+                <div class="row">
+                    <h1 class="dashboard-title">Your collage</h1>
+                </div>
+                <div class="row dashboard-text-row">
+                    <p>Here's what you've been listening to over the last X amount of time.</p>
+                    <p>To save your collage, simply right click on the image on the left and hit save.</p>
+                    <p>Alternatively, you can use the button below to save your image.</p>
+                </div>
+                <div class="row button-row">
+                    <button type="button" class="btn btn-success btn-lg auth-button">Save my image as .png</button>
+                </div>
+                <div class="row share-title-row">
+                    <h2 class="share-title">Share</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
