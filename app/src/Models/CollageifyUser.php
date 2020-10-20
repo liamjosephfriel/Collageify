@@ -5,7 +5,7 @@ use SpotifyWebAPI\SpotifyWebAPI;
 
 class CollageifyUser 
 {
-    private $api_instance;
+    private $api;
     private $user_name;
     private $user_avatar_url;
     private $user_profile_url;
@@ -16,9 +16,9 @@ class CollageifyUser
      * @param  array  $attributes
      * @return void
      */
-    public function __construct(SpotifyWebAPI $api_instance)
+    public function __construct(SpotifyWebAPI $api)
     {   
-        $this->api_instance = $api_instance;
+        $this->api = $api;
         $this->loadFromApi();        
     }
         
@@ -59,5 +59,33 @@ class CollageifyUser
     public function getUserProfileUrl()
     {
         return $this->user_profile_url;
+    }
+
+    /**
+     * Get the value of user_name
+     */ 
+    public function getUserName()
+    {
+        return $this->user_name;
+    }
+
+    /**
+     * Set the value of user_name
+     *
+     * @return  self
+     */ 
+    public function setUserName($user_name)
+    {
+        $this->user_name = $user_name;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of user_avatar_url
+     */ 
+    public function getUserAvatarUrl()
+    {
+        return $this->user_avatar_url;
     }
 }

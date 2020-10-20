@@ -1,1 +1,5 @@
-image
+{% for album in collage_albums %}
+{{ album.getName() }}
+{{ album.getCount() }}
+<br>
+{% endfor %}

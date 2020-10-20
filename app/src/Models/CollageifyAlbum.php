@@ -1,12 +1,14 @@
 <?php
 namespace Collageify\Models;
 
+use stdClass;
+
 class CollageifyAlbum 
 {   
     private $name;
     private $api_album_data;
     private $collage_ranking;
-    private $collage_count;
+    private $count;
 
     /**
      * Create a new Eloquent model instance.
@@ -14,12 +16,12 @@ class CollageifyAlbum
      * @param  array  $attributes
      * @return void
      */
-    public function __construct(String $name, Obj $api_album_data, Int $collage_ranking, Int $collage_count)
+    public function __construct(String $name, stdClass $api_album_data, Int $collage_ranking, Int $count)
     {   
         $this->name = $name;
         $this->api_album_data = $api_album_data;
         $this->collage_ranking = $collage_ranking;
-        $this->collage_count = $collage_count;
+        $this->count = $count;
     }
 
     /**
@@ -91,21 +93,21 @@ class CollageifyAlbum
     }
 
     /**
-     * Get the value of collage_count
+     * Get the value of count
      */ 
-    public function getCollageCount()
+    public function getCount()
     {
-        return $this->collage_count;
+        return $this->count;
     }
 
     /**
-     * Set the value of collage_count
+     * Set the value of count
      *
      * @return  self
      */ 
-    public function setCollageCount($collage_count)
+    public function setCollageCount($count)
     {
-        $this->collage_count = $collage_count;
+        $this->count = $count;
 
         return $this;
     }

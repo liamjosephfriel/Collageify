@@ -7,10 +7,10 @@
 
         <div class="collageify-avatar-container">
             <div class="user-avatar">
-                <img src="{{ get_env('APP_URL') }}/assets/img/liam-friel-icon.jpg" alt="User's avatar image" class="rounded-circle"/>
+                <img src="{{ user.getUserAvatarUrl() }}" alt="User's avatar image" class="rounded-circle"/>
             </div>
             <div class="user-name navbar-text">
-                Liam Friel
+                {{ user.getUserName() }}
             </div>
         </div>
     </div>
