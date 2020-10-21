@@ -1,5 +1,9 @@
-{% for album in collage_albums %}
-{{ album.getName() }}
-{{ album.getCount() }}
-<br>
-{% endfor %}
+<div class="albumGrid clearfix">
+    {% for album in collage_albums %}
+    <div class="square bg">
+        <div class="content">
+            <img class="rs" src="{{ album.getApiAlbumData().images[0].url }}">
+        </div>
+    </div>
+    {% endfor %}
+</div>

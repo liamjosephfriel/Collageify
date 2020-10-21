@@ -75,3 +75,47 @@
   margin-top: 4%;
   margin-bottom: 4%;
 }
+.collageify-dashboard .collage-col {
+  /*  For responsive images */
+}
+.collageify-dashboard .collage-col .albumGrid {
+  overflow: overlay;
+  width: 90%;
+  margin: auto;
+}
+.collageify-dashboard .collage-col .clearfix:after {
+  content: " ";
+  /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.collageify-dashboard .collage-col .square {
+  float: left;
+  position: relative;
+  width: 33%;
+  padding-bottom: 33%;
+  /* = width for a 1:1 aspect ratio */
+  margin: 0.1%;
+  background-color: #1E1E1E;
+  overflow: hidden;
+}
+.collageify-dashboard .collage-col .content {
+  position: absolute;
+  height: 100%;
+  /* = 100% - 2*5% padding */
+  width: 100%;
+  /* = 100% - 2*5% padding */
+}
+.collageify-dashboard .collage-col .content .rs {
+  width: 100%;
+  height: 100%;
+}
+.collageify-dashboard .collage-col .bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* you change this to "contain" if you don't want the images to be cropped */
+  color: #fff;
+}

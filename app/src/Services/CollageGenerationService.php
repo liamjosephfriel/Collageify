@@ -17,7 +17,14 @@ class CollageGenerationService
         $this->default_album_limit = $default_album_limit;
     }
 
-
+        
+    /**
+     * generateCollage
+     * 
+     * Entry point for ther
+     *
+     * @return void
+     */
     public function generateCollage()
     {   
        $top_tracks = $this->getTopTracks();
@@ -44,45 +51,34 @@ class CollageGenerationService
         $albums = [];
         // For each track, with their ranking as key
         foreach($tracks as $ranking => $track) {
-            // Get the album name
+            // Use id to identify albums
+            $album_id = $track->album->id;
             $album_name = $track->album->name;
 
             // If the album isn't ranked already, add a count
-            if (!isset($albums[$album_name])) {
-                $albums[$album_name] = new CollageifyAlbum($album_name, $track->album, $ranking, 1);
+            if (!isset($albums[$album_id])) {
+                $albums[$album_id] = new CollageifyAlbum($album_name, $track->album, $ranking, 1);
             } else {
                 // Otherwise, add a count to an existing album
-                $albums[$album_name]->incrementCount();
+                $albums[$album_id]->incrementCount();
             }
         }
-
+        
         // Sort the array so that albums with the most counted tracks are first
         usort($albums, function($first_album, $second_album)
         {
-            return $first_album->getCount() < $second_album->getCount();
-        });
-
-
-        // Sort again, this time ranking albums by their ranking 
-        usort($albums, function($first_album, $second_album)
-        {
-            // If it's a tie, sort the highest ranked track
-            if ($first_album->getCount() > $second_album->getCount())
-            {
-                return false;
+            // If it's a tie, go by the album ranking
+            if ($first_album->getCount() == $second_album->getCount()) {
+                return $first_album->getCollageRanking() > $second_album->getCollageRanking();
             }
 
-            return $first_album->getCount() < $second_album->getCount();
+            return $second_album->getCount() > $first_album->getCount();
         });
+
 
         // Cut down the size of the collage
         $albums = array_slice($albums, 0, $this->default_album_limit);
 
         return $albums;
-    }
-
-    private function getMissingTracks(Array $track_list)
-    {
-
     }
 }
