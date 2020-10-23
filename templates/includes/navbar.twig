@@ -5,6 +5,7 @@
             <img src="{{ get_env('APP_URL') }}/assets/img/spotify-icon-white.png" alt="Spotify logo" />
         </a>
 
+        {% if user is defined %}
         <div class="collageify-avatar-container">
             <div class="user-avatar">
                 <img src="{{ user.getUserAvatarUrl() }}" alt="User's avatar image" class="rounded-circle"/>
@@ -13,5 +14,6 @@
                 {{ user.getUserName() }}
             </div>
         </div>
+        {% endif %}
     </div>
 </navbar>

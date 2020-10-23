@@ -3,8 +3,8 @@
  * Bootstrapper file for Collageify
  */
 
-use Collageify\Models\CollageifyUser;
 use Collageify\Services\SpotifyAuthService;
+use Collageify\Services\CollageifyAppService;
 
 // Session
 session_start();
@@ -19,9 +19,6 @@ if (!isset($_ENV['PROD_ENV']) || !$_ENV['PROD_ENV']) {
 $auth_service = new SpotifyAuthService();
 $authed_api = $auth_service->auth();
 
-// Get user
-$user = new CollageifyUser($authed_api);
-
 // Twig
 $loader = new Twig_Loader_Filesystem($_ENV['APP_PATH'] . '/templates/');
 $twig = new Twig_Environment($loader);
@@ -30,3 +27,6 @@ $twig = new Twig_Environment($loader);
 $twig->addFunction(new Twig_SimpleFunction('get_env', function($env) {
     return getenv($env);
 }));
+
+// If the user isn't authed
+$app = new CollageifyAppService($authed_api, $twig);

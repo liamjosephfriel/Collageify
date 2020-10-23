@@ -15,7 +15,7 @@ class SpotifyAuthService
             $api->setAccessToken($_SESSION['spotify_auth']);
             return $api;
         }
-
+        
         // Otherwise, start session
         $session = new SpotifySession(
             $_ENV['SPOTIFY_CLIENT_ID'],
@@ -29,8 +29,12 @@ class SpotifyAuthService
            $this->setToken($session);
         }
 
-        // User needs auth code
-        $this->requestToken($session);
+        if (!empty($_GET['auth']) && $_GET['auth']) {
+            // User needs auth code
+            $this->requestToken($session);
+        }
+
+        return null;
     }
 
     public function setToken(SpotifySession $session)
@@ -50,7 +54,7 @@ class SpotifyAuthService
         ];\
 
         header('Location: ' . $session->getAuthorizeUrl($options));
-        die();
+        exit();
     }
 
 
