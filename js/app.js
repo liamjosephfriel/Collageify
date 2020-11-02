@@ -1,8 +1,10 @@
+var html2canvas = require('html2canvas');
+
 $('document').ready(function(){
 	$(window).scrollTop(0);
 	html2canvas(document.querySelector("#albumGrid"), {"proxy": "lib/proxy.php", "logging": true, onclone: function(new_document) {
       new_document.querySelector("#albumGrid").setAttribute("style", "clear: both; float: left; overflow: visible; width: 90%; margin-left: 4.3%;");
-    }}).then(canvas => {
+    }}).then(function(canvas) {
 	    document.querySelector("#albumGrid").innerHTML = "";
 	    document.querySelector("#albumGrid").appendChild(canvas);
 

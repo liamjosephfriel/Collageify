@@ -2,6 +2,7 @@
 namespace Collageify\Services;
 
 use SpotifyWebAPI\SpotifyWebAPI;
+use Collageify\Util\CollageifyUtil;
 use SpotifyWebAPI\Session as SpotifySession;
 
 class SpotifyAuthService 
@@ -26,12 +27,13 @@ class SpotifyAuthService
         // User needs authed
         if (empty($_SESSION['spotify_auth']) && !empty($_GET['code'])) 
         {
-           $this->setToken($session);
+            $this->setToken($session);
         }
 
         if (!empty($_GET['auth']) && $_GET['auth']) {
             // User needs auth code
             $this->requestToken($session);
+            echo 'test';
         }
 
         return null;
@@ -41,7 +43,13 @@ class SpotifyAuthService
     {
         $session->requestAccessToken($_GET['code']);
         $_SESSION['spotify_auth'] = $session->getAccessToken();
-        $this->redirect($_ENV['APP_URL']);
+        CollageifyUtil::redirect($_ENV['APP_URL']);
+    }
+
+    public static function logout()
+    {
+        unset($_SESSION['spotify_auth']);
+        CollageifyUtil::redirect($_ENV['APP_URL']);
     }
 
     public function requestToken(SpotifySession $session)
@@ -51,16 +59,8 @@ class SpotifyAuthService
                 'user-read-recently-played',
                 'user-top-read'
             ],
-        ];\
+        ];
 
-        header('Location: ' . $session->getAuthorizeUrl($options));
-        exit();
-    }
-
-
-    public function redirect(String $string)
-    {
-        header('Location: ' . $string);
-        exit();
+        CollageifyUtil::redirect($session->getAuthorizeUrl($options));
     }
 }

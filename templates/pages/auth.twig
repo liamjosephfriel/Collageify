@@ -12,7 +12,7 @@
             <p>Generate yours by giving the tool permission to see your most viewed tracks below!</p>
         </div>
         <div class="row button-row justify-content-center">
-            <button type="button" class="btn btn-light btn-lg auth-button">Generate my collage!</button>
+            <a class="btn btn-light btn-lg auth-button" role="button" href="{{ get_env('APP_URL') }}/auth/">Generate my collage!</a>
         </div>
     </div>
 {% endblock %}

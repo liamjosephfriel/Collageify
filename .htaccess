@@ -1,0 +1,6 @@
+RewriteEngine On 
+
+RewriteRule ^auth index.php?auth=true [L]
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+

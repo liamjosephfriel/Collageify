@@ -1,9 +1,9 @@
 <?php 
 namespace Collageify\Services;
 
-
 use Collageify\Models\CollageifyUser;
 use Collageify\Services\SpotifyApiService;
+use SpotifyWebAPI\SpotifyWebAPIException;
 use Twig_Environment;
 
 class CollageifyAppService {
@@ -19,25 +19,29 @@ class CollageifyAppService {
 
     public function run()
     {
-        $twig_template = "auth.twig";
-        $twig_params = [];
+        try {
+            $twig_template = "auth.twig";
+            $twig_params = [];
 
-        // If the user isn't authed
-        if (!is_null($this->authed_api)) 
-        {
-            // Get user
-            $user = new CollageifyUser($this->authed_api);
+            // If the user isn't authed
+            if (!is_null($this->authed_api)) 
+            {
+                // Get user
+                $user = new CollageifyUser($this->authed_api);
 
-            // Get collage
-            $collage_service = new CollageGenerationService($user, 'short_term', 9);
-            $collage_albums = $collage_service->generateCollage();
+                // Get collage
+                $collage_service = new CollageGenerationService($user, 'short_term', 9);
+                $collage_albums = $collage_service->generateCollage();
 
-            // Set params
-            $page_template = "dashboard.twig"; 
-            $twig_params = ['user' => $user, 'collage_albums' => $collage_albums];
+                // Set params
+                $twig_template = "dashboard.twig"; 
+                $twig_params = ['user' => $user, 'collage_albums' => $collage_albums];
+            }
+
+            $this->render($twig_template, $twig_params);
+        } catch (SpotifyWebAPIException $e) {
+            SpotifyAuthService::logout();
         }
-
-        $this->render($twig_template, $twig_params);
     }
 
     private function render(String $twig_template, Array $twig_params) 
