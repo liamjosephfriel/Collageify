@@ -20,7 +20,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('js', function() {
-    var js_files = './js/*.js';
+    var js_files = ['./js/*.js', './node_modules/html2canvas/dist/html2canvas.js', './node_modules/bootstrap/dist/js/bootstrap.bundle.js'];
 
     return gulp.src(js_files)
           .pipe(uglify())

@@ -68,12 +68,18 @@
   font-size: 1rem;
   margin-bottom: 7.5%;
 }
-.collageify-dashboard .dashboard-text-row {
-  margin-top: 5%;
+.collageify-dashboard .your-collage-text-row {
+  margin-top: 2%;
 }
 .collageify-dashboard .button-row {
-  margin-top: 4%;
-  margin-bottom: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.collageify-dashboard .btn-group {
+  margin-bottom: 2%;
+}
+.collageify-dashboard .btn-group a {
+  color: #0F0F0F;
 }
 .collageify-dashboard .collage-col {
   /*  For responsive images */

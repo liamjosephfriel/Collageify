@@ -3,6 +3,7 @@ namespace Collageify\Services;
 
 use Collageify\Models\CollageifyUser;
 use Collageify\Services\SpotifyApiService;
+use Collageify\Services\CollageifyValidationService;
 use SpotifyWebAPI\SpotifyWebAPIException;
 use Twig_Environment;
 
@@ -29,13 +30,16 @@ class CollageifyAppService {
                 // Get user
                 $user = new CollageifyUser($this->authed_api);
 
+                // Validate user timespan
+                $validated_timespan = CollageifyValidationService::validateTimeSpan($_POST['term_value'] ??  'short_term');
+
                 // Get collage
-                $collage_service = new CollageGenerationService($user, 'short_term', 9);
+                $collage_service = new CollageGenerationService($user, $validated_timespan, 9);
                 $collage_albums = $collage_service->generateCollage();
 
                 // Set params
                 $twig_template = "dashboard.twig"; 
-                $twig_params = ['user' => $user, 'collage_albums' => $collage_albums];
+                $twig_params = ['user' => $user, 'collage_albums' => $collage_albums, 'collage_time_frame' => $validated_timespan];
             }
 
             $this->render($twig_template, $twig_params);
