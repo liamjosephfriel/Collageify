@@ -15,22 +15,38 @@
 
     a {
         color: @collageify-main-font-colour;
+
+        @media (max-width: 1024px) {
+            font-size: 2em;
+        }
     }
 
     img {
         margin-left: 5px;
         max-height: 45px;
+
+        @media (max-width: 1024px) {
+            max-height: 60px;
+        }
     }
 
     .collageify-avatar-container {
         .user-avatar {
             float: left;
             margin-right: 15px;
+
+            @media (max-width: 1024px) {
+                max-height: 50px;
+            }
         }
 
         .user-name {
             float: right;
             font-size: 1.1rem;
+
+            @media (max-width: 1024px) {
+                font-size: 2em;
+            }
         }
     }
 }
@@ -42,11 +58,25 @@
 
     .footer-text {
         float: right;
+
+        @media (max-width: 1024px) {
+            font-size: 1.5em;
+        }
+
+        a {
+            @media (max-width: 1024px) {
+                font-size: 1em;
+            }
+        }
     }
 
     a {
         color: @collageify-main-font-colour;
         text-decoration: underline;
+
+        @media (max-width: 1024px) {
+            font-size: 2em;
+        }
     }
 }
 
@@ -56,7 +86,11 @@
 
     .content-title {
         font-size: 3rem;
-        font-family: @collageify-headers-font-family; 
+        font-family: @collageify-headers-font-family;
+
+        @media (max-width: 1024px) {
+            font-size: 5em;
+        }
     }
 
     .content-row {
@@ -65,6 +99,16 @@
         padding-right: 15%;
         font-size: 1rem;
         margin-bottom: 7.5%;
+
+        @media (max-width: 1024px) {
+            font-size: 2em;
+        }
+    }
+
+    a, button {
+        @media (max-width: 1024px) {
+            font-size: 2em;
+        }
     }
 }
 
@@ -75,11 +119,19 @@
     .dashboard-title {
         font-size: 2rem;
         font-family: @collageify-headers-font-family;
+
+        @media (max-width: 1024px) {
+            font-size: 2em;
+        }
     }
 
     .share-title {
         font-size: 1.5rem;
         font-family: @collageify-headers-font-family;
+
+        @media (max-width: 1024px) {
+            font-size: 1.5em;
+        }
     }
 
     .content-row {
@@ -107,7 +159,24 @@
         }
     }
 
+    .dashboard-col {
+        @media (max-width: 1024px) {
+            font-size: 2em;
+        }
+
+        a, button {
+            @media (max-width: 1024px) {
+                font-size: 1.25em;
+            }
+        }
+    }
+
     .collage-col {
+        
+        @media (max-width: 1024px) {
+            margin-bottom: 5%;
+        }
+
         .albumGrid {
             overflow: overlay;
             width: 90%;
@@ -141,17 +210,16 @@
         
         /*  For responsive images */
         
-        .content .rs{
+        .content .rs {
             width:100%;
             height:100%;
         }
         
-        .bg{
+        .bg {
             background-position:center center;
             background-repeat:no-repeat;
             background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
             color:#fff;
-        }            
+        }
     }
-
 }

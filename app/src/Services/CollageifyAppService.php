@@ -38,7 +38,7 @@ class CollageifyAppService {
                 $collage_albums = $collage_service->generateCollage();
 
                 // Set params
-                $twig_template = "dashboard.twig"; 
+                $twig_template = "dashboard.twig";
                 $twig_params = ['user' => $user, 'collage_albums' => $collage_albums, 'collage_time_frame' => $validated_timespan];
             }
 

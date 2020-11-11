@@ -52,15 +52,19 @@ class CollageGenerationService
         // For each track, with their ranking as key
         foreach($tracks as $ranking => $track) {
             // Use id to identify albums
-            $album_id = $track->album->id;
             $album_name = $track->album->name;
 
+            // Always get the first artist
+            $artist_name = $track->artists[0]->name;
+            // Full name of the album
+            $album_full_title = $album_name . " - " . $artist_name;
+
             // If the album isn't ranked already, add a count
-            if (!isset($albums[$album_id])) {
-                $albums[$album_id] = new CollageifyAlbum($album_name, $track->album, $ranking, 1);
+            if (!isset($albums[$album_full_title])) {
+                $albums[$album_full_title] = new CollageifyAlbum($album_name, $track->album, $ranking, 1);
             } else {
                 // Otherwise, add a count to an existing album
-                $albums[$album_id]->incrementCount();
+                $albums[$album_full_title]->incrementCount();
             }
         }
         
@@ -74,7 +78,6 @@ class CollageGenerationService
 
             return $second_album->getCount() > $first_album->getCount();
         });
-
 
         // Cut down the size of the collage
         $albums = array_slice($albums, 0, $this->default_album_limit);
