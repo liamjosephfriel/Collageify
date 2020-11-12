@@ -3,8 +3,8 @@
  * Bootstrapper file for Collageify
  */
 
-use Collageify\Services\SpotifyAuthService;
 use Collageify\Services\CollageifyAppService;
+use Collageify\Services\SpotifyAuthService;
 
 // Session
 session_start();
@@ -24,7 +24,7 @@ $loader = new Twig_Loader_Filesystem($_ENV['APP_PATH'] . '/templates/');
 $twig = new Twig_Environment($loader);
 
 // Twig functions
-$twig->addFunction(new Twig_SimpleFunction('get_env', function($env) {
+$twig->addFunction(new Twig_SimpleFunction('get_env', function ($env) {
     return getenv($env);
 }));
 

@@ -1,22 +1,26 @@
 <?php
 namespace Collageify\Services;
 
-use SpotifyWebAPI\SpotifyWebAPI;
 use Collageify\Util\CollageifyUtil;
 use SpotifyWebAPI\Session as SpotifySession;
+use SpotifyWebAPI\SpotifyWebAPI;
 
-class SpotifyAuthService 
+class SpotifyAuthService
 {
+    /**
+     * Auth the application using the Spotify API
+     *
+     * @return mixed
+     */
     public function auth()
-    {   
+    {
         // If the user is authed
-        if (!empty($_SESSION['spotify_auth']))
-        {
+        if (!empty($_SESSION['spotify_auth'])) {
             $api = new SpotifyWebAPI();
             $api->setAccessToken($_SESSION['spotify_auth']);
             return $api;
         }
-        
+
         // Otherwise, start session
         $session = new SpotifySession(
             $_ENV['SPOTIFY_CLIENT_ID'],
@@ -25,8 +29,7 @@ class SpotifyAuthService
         );
 
         // User needs authed
-        if (empty($_SESSION['spotify_auth']) && !empty($_GET['code'])) 
-        {
+        if (empty($_SESSION['spotify_auth']) && !empty($_GET['code'])) {
             $this->setToken($session);
         }
 
@@ -39,6 +42,12 @@ class SpotifyAuthService
         return null;
     }
 
+    /**
+     * Set the Spotify API token
+     *
+     * @param  SpotifySession $session
+     * @return void
+     */
     public function setToken(SpotifySession $session)
     {
         $session->requestAccessToken($_GET['code']);
@@ -46,18 +55,29 @@ class SpotifyAuthService
         CollageifyUtil::redirect($_ENV['APP_URL']);
     }
 
+    /**
+     * De-auth, end session
+     *
+     * @return void
+     */
     public static function logout()
     {
         unset($_SESSION['spotify_auth']);
         CollageifyUtil::redirect($_ENV['APP_URL']);
     }
 
+    /**
+     * Request token from Spotify API using the following permissions
+     *
+     * @param  SpotifySession $session
+     * @return void
+     */
     public function requestToken(SpotifySession $session)
     {
         $options = [
             'scope' => [
                 'user-read-recently-played',
-                'user-top-read'
+                'user-top-read',
             ],
         ];
 

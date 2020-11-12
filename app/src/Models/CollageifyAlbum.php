@@ -3,11 +3,34 @@ namespace Collageify\Models;
 
 use stdClass;
 
-class CollageifyAlbum 
-{   
+class CollageifyAlbum
+{
+    /**
+     * The name of the album, from Spotify
+     *
+     * @var string
+     */
     private $name;
+
+    /**
+     * The API album data from Spotify
+     *
+     * @var mixed
+     */
     private $api_album_data;
+
+    /**
+     * The ranking of the album, which is the position of the first track in the most played tracks list
+     *
+     * @var integer
+     */
     private $collage_ranking;
+
+    /**
+     * The number of tracks this album has in most played track list
+     *
+     * @var integer
+     */
     private $count;
 
     /**
@@ -17,7 +40,7 @@ class CollageifyAlbum
      * @return void
      */
     public function __construct(String $name, stdClass $api_album_data, Int $collage_ranking, Int $count)
-    {   
+    {
         $this->name = $name;
         $this->api_album_data = $api_album_data;
         $this->collage_ranking = $collage_ranking;
@@ -25,7 +48,9 @@ class CollageifyAlbum
     }
 
     /**
-     * Increments the count attribute
+     * Increments the count of the number of tracks for this album featured in the most played tracks
+     *
+     * @return void
      */
     public function incrementCount()
     {
@@ -33,82 +58,86 @@ class CollageifyAlbum
     }
 
     /**
-     * Get the value of name
-     */ 
+     * Get the name of the album
+     *
+     * @return void
+     */
     public function getName()
     {
         return $this->name;
     }
 
     /**
-     * Set the value of name
+     * Set the album name
      *
-     * @return  self
-     */ 
+     * @param  mixed $name
+     * @return void
+     */
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
     }
 
     /**
-     * Get the value of api_album_data
-     */ 
+     * Get the API data for this album
+     *
+     * @return void
+     */
     public function getApiAlbumData()
     {
         return $this->api_album_data;
     }
 
     /**
-     * Set the value of api_album_data
+     * Set the API gathered album data
      *
-     * @return  self
-     */ 
+     * @param  mixed $api_album_data
+     * @return void
+     */
     public function setApiAlbumData($api_album_data)
     {
         $this->api_album_data = $api_album_data;
-
-        return $this;
     }
 
     /**
-     * Get the value of collage_ranking
-     */ 
+     * Get the ranking of this album in the collage
+     *
+     * @return void
+     */
     public function getCollageRanking()
     {
         return $this->collage_ranking;
     }
 
     /**
-     * Set the value of collage_ranking
+     * Set the collage ranking of this album
      *
-     * @return  self
-     */ 
+     * @param  mixed $collage_ranking
+     * @return void
+     */
     public function setCollageRanking($collage_ranking)
     {
         $this->collage_ranking = $collage_ranking;
-
-        return $this;
     }
 
     /**
-     * Get the value of count
-     */ 
+     * Get the count of the number of top tracks in this album
+     *
+     * @return void
+     */
     public function getCount()
     {
         return $this->count;
     }
 
     /**
-     * Set the value of count
+     * Set the track count value
      *
-     * @return  self
-     */ 
+     * @param  mixed $count
+     * @return void
+     */
     public function setCollageCount($count)
     {
         $this->count = $count;
-
-        return $this;
     }
-} 
+}
