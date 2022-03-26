@@ -20,7 +20,7 @@ Essentially albums with the most tracks featured in the most listened to data wi
 Happy Collageifying!
 
 <p align="center">
-  <img src="https://liam.scot/blog/wp-content/uploads/2020/05/6-month-collage-768x765.png" height="300px" width="300px">
+  <img src="https://i.imgur.com/Spt7gF9.jpg" height="300px" width="300px">
 </p>
 <p align="center">
     <i>An example collage of mine</i>
