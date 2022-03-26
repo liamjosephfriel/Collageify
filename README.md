@@ -5,7 +5,7 @@
 ## About Collageify
 Collageify is a  simple tool for creating album collages that reflect your Spotify activity. The inspiration for this tool comes from [Tapmuisc's great Last.FM album collage generator.](https://www.tapmusic.net/)
 
-I started this project last year [with the release of my Spotify album collage generation tool](https://liam.scot/blog/spotify-album-collage-generator/) which Collageify is a rewrite of.  
+I started this project last year [with the release of my Spotify album collage generation tool](https://www.liam.scot/blog/collageify/) which Collageify is a rewrite of.  
 
 The tool itself is built with PHP, using Twig for templating and Javascript for the collage rendering. Bootstrap is used for the HTML scaffolding and Gulp and NPM and used for handling JS packages.
 
