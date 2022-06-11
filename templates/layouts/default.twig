@@ -19,13 +19,20 @@
     </head>
     <body class="collageify-main">
     {# Navbar Includes #}
-    {% include ('includes/navbar.twig') %}
+        <header>
+        {% include ('includes/navbar.twig') %}
+        </header>
 
     {# Content Block #}
-    {% block content %}
-    {% endblock %}
+        <main>
+        {% block content %}
+        {% endblock %}
+        </main>
+
 
     {# Footbar Includes #}
-    {% include ('includes/footer.twig') %}
+        <footer>
+        {% include ('includes/footer.twig') %}
+        </footer>
     </body>
 </html>
