@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     uglify = require('gulp-uglify')
     cssmin = require('gulp-cssmin'),
-    sass = require('gulp-sass')
+    sass = require('gulp-sass')(require('node-sass')),
     output_folder = './public/min/',
     sass.compiler = require('node-sass');
  

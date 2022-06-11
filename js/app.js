@@ -15,5 +15,10 @@ $('document').ready(function () {
 		$('#jsTermValue').val($(this).data('term'));
 		$('.jsTermForm').submit();
 	});
+
+	$('.size-button').click(function () {
+		$('#jsSizeValue').val($(this).data('size'));
+		$('.jsSizeForm').submit();
+	});
 });
 

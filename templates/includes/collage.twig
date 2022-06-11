@@ -1,6 +1,6 @@
 <div class="albumGrid clearfix" id="albumGrid">
     {% for album in collage_albums %}
-    <div class="square bg">
+    <div class="square{{ collage_size }} bg">
         <div class="content">
             <img class="rs" src="{{ album.getApiAlbumData().images[0].url }}">
         </div>

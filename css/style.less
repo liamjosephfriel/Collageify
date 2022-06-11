@@ -113,7 +113,7 @@
 }
 
 .collageify-dashboard {
-    margin-top: 7.5%;
+    margin-top: 2%;
     color: @collageify-main-font-colour;
 
     .dashboard-title {
@@ -135,11 +135,15 @@
     }
 
     .content-row {
-        margin-top: 7.5%; 
+        margin-top: 2%; 
         padding-left: 15%;
         padding-right: 15%;
         font-size: 1rem;
-        margin-bottom: 7.5%;
+        margin-bottom: 2%;
+    }
+
+    .info-row {
+        margin-bottom: 5%;
     }
 
     .your-collage-text-row {
@@ -153,6 +157,7 @@
 
     .btn-group {
         margin-bottom: 2%;
+        margin-right: 2%;
 
         a {
             color: @collageify-main-bg-colour;
@@ -179,7 +184,7 @@
 
         .albumGrid {
             overflow: overlay;
-            width: 90%;
+            width: 100%;
             margin: auto;
         }
 
@@ -191,12 +196,29 @@
             clear: both;
         }
 
-        .square {
+        .square9 {
             float:left;
             position: relative;
-            width: 33%;
-            padding-bottom : 33%; /* = width for a 1:1 aspect ratio */
-            margin:0.1%;
+            width: calc(100% / 3);
+            padding-bottom : calc(100% / 3); /* = width for a 1:1 aspect ratio */
+            background-color:#1E1E1E;
+            overflow:hidden;
+        }
+
+        .square16 {
+            float:left;
+            position: relative;
+            width: 25%;
+            padding-bottom : 25%; /* = width for a 1:1 aspect ratio */
+            background-color:#1E1E1E;
+            overflow:hidden;
+        }
+
+        .square25 {
+            float:left;
+            position: relative;
+            width: 20%;
+            padding-bottom : 20%; /* = width for a 1:1 aspect ratio */
             background-color:#1E1E1E;
             overflow:hidden;
         }
@@ -221,5 +243,9 @@
             background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
             color:#fff;
         }
+    }
+
+    #downloadButton {
+        color: #fff;
     }
 }

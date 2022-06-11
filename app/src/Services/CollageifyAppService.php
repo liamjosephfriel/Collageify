@@ -54,13 +54,16 @@ class CollageifyAppService
                 // Validate user timespan
                 $validated_timespan = CollageifyValidationService::validateTimeSpan($_POST['term_value'] ?? 'short_term');
 
+                // Validate the size of the collage, 3x3, 4x4 or 5x5
+                $number_of_albums = CollageifyValidationService::validateCollageSize($_POST['size_value'] ?? 9);
+
                 // Get collage
-                $collage_service = new CollageGenerationService($user, $validated_timespan, 9);
+                $collage_service = new CollageGenerationService($user, $validated_timespan, $number_of_albums);
                 $collage_albums = $collage_service->generateCollage();
 
                 // Set params
                 $twig_template = "dashboard.twig";
-                $twig_params = ['user' => $user, 'collage_albums' => $collage_albums, 'collage_time_frame' => $validated_timespan];
+                $twig_params = ['user' => $user, 'collage_albums' => $collage_albums, 'collage_time_frame' => $validated_timespan, 'collage_size' => $number_of_albums];
             }
 
             $this->render($twig_template, $twig_params);
