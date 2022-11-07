@@ -51,11 +51,23 @@ class CollageifyAppService
                 // Get user
                 $user = new CollageifyUser($this->authed_api);
 
-                // Validate user timespan
-                $validated_timespan = CollageifyValidationService::validateTimeSpan($_POST['term_value'] ?? 'short_term');
+                // Validate user timespan, pull from session data originally
+                $validated_timespan = !empty($_SESSION['term_value']) ? $_SESSION['term_value'] : 'short_term';
+
+                // If the term value has been set
+                if (!empty($_POST['term_value'])) {
+                    $validated_timespan = CollageifyValidationService::validateTimeSpan($_POST['term_value']);
+                    $_SESSION['term_value'] = $validated_timespan;
+                }
 
                 // Validate the size of the collage, 3x3, 4x4 or 5x5
-                $number_of_albums = CollageifyValidationService::validateCollageSize($_POST['size_value'] ?? 9);
+                $number_of_albums = !empty($_SESSION['size_value']) ? $_SESSION['size_value'] : '9';
+
+                // If the size value has been set
+                if (!empty($_POST['size_value'])) {
+                    $number_of_albums = CollageifyValidationService::validateCollageSize($_POST['size_value'] ?? 9);
+                    $_SESSION['size_value'] = $number_of_albums;
+                }
 
                 // Get collage
                 $collage_service = new CollageGenerationService($user, $validated_timespan, $number_of_albums);
