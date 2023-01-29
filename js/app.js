@@ -7,7 +7,7 @@ $('document').ready(function () {
 		$('#downloadButton').click(function () {
 			var download_button = document.getElementById('downloadButton');
 			download_button.href = canvas.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
-			download_button.download = "collage.png";
+			download_button.download = "collage_" + Math.floor(Date.now() / 1000) + ".png";
 		});
 	});
 
