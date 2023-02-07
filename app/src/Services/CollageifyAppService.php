@@ -51,6 +51,11 @@ class CollageifyAppService
                 // Get user
                 $user = new CollageifyUser($this->authed_api);
 
+                // If the user has logged out
+                if (!empty($_POST['logout']) ?? false) {
+                    SpotifyAuthService::logout();
+                }
+
                 // Validate user timespan, pull from session data originally
                 $validated_timespan = !empty($_SESSION['term_value']) ? $_SESSION['term_value'] : 'short_term';
 

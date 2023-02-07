@@ -20,5 +20,9 @@ $('document').ready(function () {
 		$('#jsSizeValue').val($(this).data('size'));
 		$('.jsSizeForm').submit();
 	});
+
+	$('.logout-button').click(function () {
+		$('.jsLogoutForm').submit();
+	});
 });
 
