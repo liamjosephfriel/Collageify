@@ -5,75 +5,91 @@
         <div class="row content-row">
             <div class="col-lg collage-col">
                 {% include 'includes/collage.twig' %}
-                    </div>
+            </div>
+        </div>
         <div class="row content-row info-row">
             <div class="col-lg dashboard-col">
                 <div class="row">
-                    <div class="btn-group">
-                        <a type="button" id="downloadButton" class="btn btn-success btn-lg auth-button">Save my image as .png</a>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ collage_time_frame | capitalize | replace({'_' : ' '}) }}
-                        </button>
-                        <form method="post" class="jsTermForm" action="{{ get_env('APP_URL') }}/">
-                            <div class="dropdown-menu">
-                                <button class="dropdown-item term-button" type="button" data-term="short_term">Short term</button>
-                                <button class="dropdown-item term-button" type="button" data-term="medium_term">Medium term</button>
-                                <button class="dropdown-item term-button" type="button" data-term="long_term">Long term</button>
-                            </div>
-                            <input type="hidden" name="term_value" value="{{ collage_time_frame }}" id="jsTermValue">
-                        </form>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {% if collage_size == 9 %}
-                            3x3
-                            {% elseif collage_size == 16 %}
-                            4x4
-                            {% elseif collage_size == 25 %}
-                            5x5
-                            {% else %}
-                            3x3
-                            {% endif %}
-                        </button>
-                        <form method="post" class="jsSizeForm" action="{{ get_env('APP_URL') }}/">
-                            <div class="dropdown-menu">
-                                <button class="dropdown-item size-button" type="button" data-size="3x3">3x3</button>
-                                <button class="dropdown-item size-button" type="button" data-size="4x4">4x4</button>
-                                <button class="dropdown-item size-button" type="button" data-size="5x5">5x5</button>
-                            </div>
-                            <input type="hidden" name="size_value" value="{{ collage_size }}" id="jsSizeValue">
-                        </form>
+                    <div class="col-lg">
+                        <div class="btn-group">
+                            <a type="button" id="downloadButton" class="btn btn-success btn-lg auth-button">Save my image as .png</a>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ collage_time_frame | capitalize | replace({'_' : ' '}) }}
+                            </button>
+                            <form method="post" class="jsTermForm" action="{{ get_env('APP_URL') }}/">
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item term-button" type="button" data-bs-term="short_term">Short term</button>
+                                    <button class="dropdown-item term-button" type="button" data-bs-term="medium_term">Medium term</button>
+                                    <button class="dropdown-item term-button" type="button" data-bs-term="long_term">Long term</button>
+                                </div>
+                                <input type="hidden" name="term_value" value="{{ collage_time_frame }}" id="jsTermValue">
+                            </form>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {% if collage_size == 9 %}
+                                3x3
+                                {% elseif collage_size == 16 %}
+                                4x4
+                                {% elseif collage_size == 25 %}
+                                5x5
+                                {% else %}
+                                3x3
+                                {% endif %}
+                            </button>
+                            <form method="post" class="jsSizeForm" action="{{ get_env('APP_URL') }}/">
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item size-button" type="button" data-bs-size="3x3">3x3</button>
+                                    <button class="dropdown-item size-button" type="button" data-bs-size="4x4">4x4</button>
+                                    <button class="dropdown-item size-button" type="button" data-bs-size="5x5">5x5</button>
+                                </div>
+                                <input type="hidden" name="size_value" value="{{ collage_size }}" id="jsSizeValue">
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <h1 class="dashboard-title">Your collage</h1>
+                    <div class="col-lg">
+                        <h1 class="dashboard-title">Your collage</h1>
+                    </div>
                 </div>
                 <div class="row your-collage-text-row">
-                    <p>Here's what you've been listening to over the last {% include 'includes/time_duration.twig' %}</p>
-                    <p>To save your collage, simply right click on the image on the left and hit save.</p>
-                    <p>Alternatively, you can use the button below to save your image.</p>
+                    <div class="col-lg">
+                        <p>Here's what you've been listening to over the last {% include 'includes/time_duration.twig' %}</p>
+                        <p>To save your collage, simply right click on the image on the left and hit save.</p>
+                        <p>Alternatively, you can use the button below to save your image.</p>
+                    </div>
                 </div>
                 <div class="row subtitle-row">
-                    <h2 class="share-title">Time span</h2>
+                    <div class="col-lg">
+                        <h2 class="share-title">Time span</h2>
+                    </div>
                 </div>
                 <div class="row dashboard-text-row">
-                    <p>You can change your collage to match your most listened to albums over different time spans.</p>
+                    <div class="col-lg">
+                        <p>You can change your collage to match your most listened to albums over different time spans.</p>
+                    </div>
                 </div>
                 <div class="row dashboard-text-row">
-                    <ul>
-                        <li><strong>Short term:</strong> Last couple of weeks / month.</li>
-                        <li><strong>Medium term:</strong> Last couple of months.</li>
-                        <li><strong>Long term:</strong> Last couple of years / all time.</li>
-                    </ul>
-                    </form>
+                    <div class="col-lg">
+                        <ul>
+                            <li><strong>Short term:</strong> Last couple of weeks / month.</li>
+                            <li><strong>Medium term:</strong> Last couple of months.</li>
+                            <li><strong>Long term:</strong> Last couple of years / all time.</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="row subtitle-row">
-                    <h2 class="share-title">Share</h2>
+                    <div class="col-lg">
+                        <h2 class="share-title">Share</h2>
+                    </div>
                 </div>
                 <div class="row share-buttons-row">
+                    <div class="col-lg">
                     {% include 'includes/share-buttons.twig' %}
+                    </div>
                 </div>
             </div>
         </div>

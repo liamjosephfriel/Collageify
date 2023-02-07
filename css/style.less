@@ -41,21 +41,8 @@ main {
     }
 
     .collageify-avatar-container {
-
-        li {
-            display: inline-block;
-            list-style: none;
-        }
-
-        .dropdown-toggle {
-            font-size: 1.25rem;
-        }
-
-        ul {
-            margin-bottom: 0px !important;
-        }
-
         .user-avatar {
+            float: left;
             margin-right: 15px;
 
             @media (max-width: 1024px) {
@@ -64,23 +51,11 @@ main {
         }
 
         .user-name {
+            float: right;
             font-size: 1.1rem;
 
             @media (max-width: 1024px) {
                 font-size: 2em;
-            }
-        }
-
-        .dropdown-menu {
-            background-color: #53565A;
-            color: white;
-
-            button {
-                color: white;
-            }
-
-            form {
-                margin-bottom: 0px !important;
             }
         }
     }
@@ -137,8 +112,6 @@ main {
 
         @media (max-width: 1024px) {
             font-size: 2em;
-            padding-left: 5%;
-            padding-right: 5%;
         }
     }
 
