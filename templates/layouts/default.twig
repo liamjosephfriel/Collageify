@@ -22,9 +22,20 @@
         <header>
         {% include ('includes/navbar.twig') %}
         </header>
+        
 
     {# Content Block #}
         <main>
+        <div class="container">
+            <div class="banner">
+                <div class="row">
+                    <div class="col-lg">
+                        <h2>Hey all, I've had to make some changes to comply with Spotify's API terms.<br>
+                        Sorry for the inconvience. 😔</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% block content %}
         {% endblock %}
         </main>

@@ -12,9 +12,6 @@
                 <div class="row">
                     <div class="col-lg">
                         <div class="btn-group">
-                            <a type="button" id="downloadButton" class="btn btn-success btn-lg auth-button">Save my image as .png</a>
-                        </div>
-                        <div class="btn-group">
                             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ collage_time_frame | capitalize | replace({'_' : ' '}) }}
                             </button>
@@ -53,6 +50,15 @@
                 <div class="row">
                     <div class="col-lg">
                         <h1 class="dashboard-title">Your collage</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg">
+                        <ul>
+                        {% for album in collage_albums %}
+                            <li>{{ album.getApiAlbumData().name }} - {{ album.getApiAlbumData().artists[0].name }} - <a href="{{ album.getApiAlbumData().uri }}">Play on Spotify</a></li>
+                        {% endfor %}
+                        </ul>
                     </div>
                 </div>
                 <div class="row your-collage-text-row">
